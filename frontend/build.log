@@ -1,0 +1,22 @@
+
+> frontend@0.1.0 build
+> react-scripts build
+
+(node:11340) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Creating an optimized production build...
+node:internal/event_target:1118
+  process.nextTick(() => { throw err; });
+                           ^
+
+DataCloneError: Data cannot be cloned, out of memory.
+    at new DOMException (node:internal/per_context/domexception:76:18)
+    at reportSuccess (c:\Users\Kikay\thefolio-project\frontend\node_modules\jest-worker\build\workers\threadChild.js:70:32)
+Emitted 'error' event on Worker instance at:
+    at [kOnErrorMessage] (node:internal/worker:391:10)
+    at [kOnMessage] (node:internal/worker:402:37)
+    at MessagePort.<anonymous> (node:internal/worker:297:57)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:843:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+
+Node.js v24.14.1
