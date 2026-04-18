@@ -6,7 +6,7 @@ const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/db');
 
-// Import routes (you will create these files in the next steps)
+// Import routes
 const authRoutes = require('./routes/auth.routes');
 const postRoutes = require('./routes/post.routes');
 const commentRoutes = require('./routes/comment.routes');
@@ -17,16 +17,20 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
-// ── Middleware ─────────────────────────────────────────────────
-
-// Allow React (port 3000) + Vercel frontend
+// ── CORS CONFIG (FIXED - SINGLE SOURCE OF TRUTH) ───────────────
 const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'https://thefolio.vercel.app'
+  'https://thefolio.vercel.app',
+  'https://thefolio-4uhe.onrender.com'
 ];
 
-app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
+// ── Middleware ────────────────────────────────────────────────
 
 // Parse JSON bodies
 app.use(express.json());
